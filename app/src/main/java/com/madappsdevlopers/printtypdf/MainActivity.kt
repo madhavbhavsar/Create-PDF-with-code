@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        println("hello git")
-        
+        //println("hello git")
+
         Dexter.withActivity(this)
             .withPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .withListener(object:PermissionListener{
@@ -64,26 +64,25 @@ class MainActivity : AppCompatActivity() {
 
             document.open()
             document.pageSize = PageSize.A6
-            document.addAuthor("PSPL Dispatch List")
-            document.addCreator("PSPL")
+            document.addAuthor("Madhav Bhavsar")
+            document.addCreator("Madhav Bhavsar")
 
             val colorAccent = BaseColor(0,153,204,255)
             val headingFontSize = 20.0f
             val valueFontSize = 26.0f
 
             val fontName = BaseFont.createFont("assets/fonts/grandhotelregular.otf","UTF-8",BaseFont.EMBEDDED)
-
             val titleStyle = Font(fontName,36.0f,Font.NORMAL,BaseColor.BLACK)
+            addNewItem(document,"Hello World", Element.ALIGN_CENTER,titleStyle)
 
-            addNewItem(document,"PSPL Dispatch Details", Element.ALIGN_CENTER,titleStyle)
+            //to add more line in document....define the line 74,75,76 again as u llike...and add text in addNewItem function....
 
-            val headingStyle = Font(fontName,headingFontSize,Font.NORMAL,colorAccent)
-            /////////
+
             document.close()
             printPDF()
 
         } catch (e:Exception){
-            Log.e("PSPLERROR ", ""+e.message)
+            Log.e("ERROR ", ""+e.message)
         }
 
     }
@@ -97,7 +96,7 @@ class MainActivity : AppCompatActivity() {
             printManager.print("Document",printAdapter, PrintAttributes.Builder().build())
 
         } catch (e:Exception){
-            Log.e("PSPL " ,""+e.message)
+            Log.e("err " ,""+e.message)
         }
 
 

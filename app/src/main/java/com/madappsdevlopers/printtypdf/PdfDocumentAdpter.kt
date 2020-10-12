@@ -71,7 +71,7 @@ class PdfDocumentAdpter (context: Context,path:String) : PrintDocumentAdapter(){
         } catch (e:Exception){
 
             writeResultcallback!!.onWriteFailed(e.message)
-            Log.e("PSPL ",""+e.message)
+            Log.e("err ",""+e.message)
 
 
         } finally {
@@ -82,7 +82,7 @@ class PdfDocumentAdpter (context: Context,path:String) : PrintDocumentAdapter(){
 
 
             } catch (e:IOException){
-                Log.e("PSPL ",""+e.message)
+                Log.e("err ",""+e.message)
             }
         }
 
