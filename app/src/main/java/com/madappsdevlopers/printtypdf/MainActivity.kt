@@ -1,13 +1,12 @@
 package com.madappsdevlopers.printtypdf
 
-import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.print.PrintAttributes
 import android.print.PrintManager
 import android.util.Log
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.itextpdf.text.*
 import com.itextpdf.text.pdf.BaseFont
 import com.itextpdf.text.pdf.PdfWriter
@@ -19,8 +18,6 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import java.io.File
 import java.io.FileOutputStream
-import java.lang.Exception
-import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        println("hello git")
+        
         Dexter.withActivity(this)
             .withPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
             .withListener(object:PermissionListener{
